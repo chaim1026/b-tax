@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './file-reader.styles.css';
+import './read-file.styles.css';
 import FileLoader from '../../components/file-loader/file-loader.components';
 import LinkButton from '../../components/link-button/link-button.components';
 
 
 const ReadFile = ({ loadedFile }) => (
         <div>
-            <p className='header'>FILE RESAD</p>
+            <p className='header'>FILE READER</p>
             <FileLoader />
             
             <LinkButton 
