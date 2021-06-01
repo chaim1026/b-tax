@@ -1,0 +1,19 @@
+.file-loader {
+  margin: 0 auto;
+  width: 50vw;
+  height: 30vh;
+  border: 5px dashed aqua;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 20px;
+}
+
+.file-input {
+  margin: 50px auto;
+  font-size: 40px;
+}
