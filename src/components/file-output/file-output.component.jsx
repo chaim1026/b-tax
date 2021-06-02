@@ -16,6 +16,6 @@ const FileOutput = ({ loadedFile }) => {
 
 const mapStateToProps = (state) => ({
     loadedFile: state.loadedFile.loadedFile
-})
+});
 
 export default connect(mapStateToProps)(FileOutput);

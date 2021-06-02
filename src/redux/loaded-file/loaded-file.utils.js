@@ -1,7 +1,7 @@
 export const cleanReceivedData = (loadedFile) => {
     let loadedFileArray = loadedFile.split('');
     let cleanData = [];
-    let badLetters = [];
+    let badLetters = '';
     let comment = false;
     let type = '';
     for (let letter of loadedFileArray) {
@@ -18,15 +18,23 @@ export const cleanReceivedData = (loadedFile) => {
                 cleanData.push(letter)
             }
         } else {
-            if (badLetters[badLetters.length - 1] === '*' && letter === '/' && type === '/*') {
+            if (badLetters === '*' && letter === '/' && type === '/*') {
                 comment = false;
+                type = '';
+                badLetters = '';
+                if ((cleanData[cleanData.length - 1]) !== ' '){
+                    cleanData.push(' ');
+                }
             } else if (letter === '\n' && type === '//') {
                 comment = false;
-            } 
-            badLetters.push(letter);
+                type = '';
+                badLetters = '';
+            } else {
+                badLetters = letter;
+            }
         }
     } 
-
+ 
     let finalString = cleanData.join('');
     let result = finalString.split('\n');
 
